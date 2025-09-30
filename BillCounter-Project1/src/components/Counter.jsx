@@ -113,7 +113,7 @@ const Counter = () => {
     }
 
       {/* Product Details Section */}
-      <div className='bg-green-500 mt-6 md:mt-12 rounded-lg p-4 md:p-6 mx-4 md:mx-10 lg:mx-60'>
+      <div className='bg-green-500 mt-6 md:mt-12 rounded-lg p-4 md:p-6 mx-4 md:mx-10 lg:mx-60 border-2xl'>
         {/* Product Name Row */}
         <div className='flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center mb-4'>
           <label htmlFor='productname' className="font-semibold text-lg md:text-xl whitespace-nowrap">Product Name:</label>
