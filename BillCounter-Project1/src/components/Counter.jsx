@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { createContext } from 'react'
 import { useState } from 'react'
+
+export const BillingContext = createContext();
 
 const Counter = () => {
 
@@ -43,7 +45,9 @@ const Counter = () => {
 
 
   return (
-    <div className='min-h-screen bg-gray-100 flex flex-col'>
+    <>
+ <BillingContext.Provider value={{productName,quantity,price,setProductName,setQuantity,setPrice,handleAddItem,productList,resetBills,customerName,customerPhone, handleGenerateBills}}>
+  <div className='min-h-screen bg-gray-100 flex flex-col'>
       <div className='text-center px-4 py-6 md:py-10'>
         <h1 className='font-sans text-3xl md:text-5xl font-bold'>Bill Counter</h1>
         <h2 className='font-sans text-xl md:text-3xl mt-3 md:mt-5'>Welcome to the Bill Counter...</h2>
@@ -113,7 +117,7 @@ const Counter = () => {
     }
 
       {/* Product Details Section */}
-      <div className='bg-green-500 mt-6 md:mt-12 rounded-lg p-4 md:p-6 mx-4 md:mx-10 lg:mx-60 border-2xl'>
+      <div className='bg-green-300 mt-6 md:mt-12 rounded-lg p-4 md:p-6 mx-4 md:mx-10 lg:mx-60 border-2xl'>
         {/* Product Name Row */}
         <div className='flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center mb-4'>
           <label htmlFor='productname' className="font-semibold text-lg md:text-xl whitespace-nowrap">Product Name:</label>
@@ -216,6 +220,10 @@ const Counter = () => {
 
       </div>}
     </div>
+ </BillingContext.Provider>
+
+    
+    </>
   )
 }
 
